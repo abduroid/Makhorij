@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:makhorij_app/ui/screens/word_pager_screen.dart';
+import 'package:makhorij_app/ui/screens/lessons_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +14,10 @@ class MyApp extends StatelessWidget {
       title: 'Makhorij',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
       home: const WordPagerScreen(),
+      theme: ThemeData(
+          colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+      ),
+      home: const LessonsScreen(),
     );
   }
 }
