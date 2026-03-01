@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../models/word.dart';
 import '../../services/player_manager.dart';
+import '../widgets/word_card.dart';
 
 class WordPagerScreen extends StatefulWidget {
   const WordPagerScreen({super.key});
@@ -54,14 +55,9 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
             onPageChanged: _onPageChanged,
             itemBuilder: (context, index) {
               final word = words[index];
-              return GestureDetector(
+              return WordCard(
+                word: word,
                 onTap: () => unawaited(_playerManager.play(word)),
-                child: Center(
-                  child: Text(
-                    word.arabicText,
-                    style: const TextStyle(fontSize: 72),
-                  ),
-                ),
               );
             },
           ),
