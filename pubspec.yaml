@@ -36,6 +36,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/Alif.m4a
     - assets/lam.m4a
 
 
@@ -44,7 +45,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
+  fonts:
+    - family: Uthmanic-script-Hafs
+      fonts:
+        - asset: fonts/Uthmanic-script-Hafs-regular.otf
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

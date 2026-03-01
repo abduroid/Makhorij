@@ -12,10 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Makhorij',
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: const WordPagerScreen(),
       theme: ThemeData(
           colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+        fontFamily: 'Uthmanic-script-Hafs'
       ),
       home: const LessonsScreen(),
     );
