@@ -2,12 +2,15 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../../models/lesson.dart';
 import '../../models/word.dart';
 import '../../services/player_manager.dart';
 import '../widgets/word_card.dart';
 
 class WordPagerScreen extends StatefulWidget {
-  const WordPagerScreen({super.key});
+  final Lesson lesson;
+
+  const WordPagerScreen({super.key, required this.lesson});
 
   @override
   State<WordPagerScreen> createState() => _WordPagerScreenState();
@@ -20,16 +23,12 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
   bool _isAutoPlaying = false;
   Timer? _autoPlayTimer;
 
-  final words = [
-    Word(arabicText: "لَ", startSeconds: 0, endSeconds: 2),
-    Word(arabicText: "لِ", startSeconds: 2, endSeconds: 5),
-    Word(arabicText: "لُ", startSeconds: 5, endSeconds: 7),
-  ];
+  List<Word> get words => widget.lesson.words;
 
   @override
   void initState() {
     super.initState();
-    _playerManager = PlayerManager('assets/lam.m4a');
+    _playerManager = PlayerManager(widget.lesson.audioAssetPath);
     unawaited(_playerManager.init());
     _pageController = PageController();
   }
