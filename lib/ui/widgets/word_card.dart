@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 import '../../models/word.dart';
@@ -10,13 +11,18 @@ class WordCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: SizedBox.expand(
-        child: Center(
-          child: Text(
-            word.arabicText,
-            style: const TextStyle(fontSize: 256),
+    return Padding(
+      padding: const EdgeInsets.all(64),
+      child: GestureDetector(
+        onTap: onTap,
+        child: SizedBox.expand(
+          child: Center(
+            child: AutoSizeText(
+              word.arabicText,
+              maxLines: 1,
+              style: const TextStyle(fontSize: 200),
+              textAlign: TextAlign.center,
+            ),
           ),
         ),
       ),
