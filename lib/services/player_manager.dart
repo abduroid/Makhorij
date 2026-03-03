@@ -20,11 +20,11 @@ class PlayerManager {
     await _positionSub?.cancel();
     _positionSub = null;
     await _player.stop();
-    await _player.seek(Duration(seconds: word.startSeconds));
+    await _player.seek(Duration(milliseconds: word.startMilliSeconds));
 
     if (_disposed) return;
 
-    final endDuration = Duration(seconds: word.endSeconds);
+    final endDuration = Duration(milliseconds: word.endMilliSeconds);
     _positionSub = _player.positionStream.listen((position) {
       if (_disposed) return;
       if (position >= endDuration) {

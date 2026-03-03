@@ -1,11 +1,11 @@
 class Word {
   final String arabicText;
-  final int startSeconds;
-  final int endSeconds;
+  final int startMilliSeconds;
+  final int endMilliSeconds;
 
   Word({
     required this.arabicText,
-    required this.startSeconds,
-    required this.endSeconds,
+    required this.startMilliSeconds,
+    required this.endMilliSeconds,
   });
 }

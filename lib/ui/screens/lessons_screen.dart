@@ -10,18 +10,25 @@ final lessons = [
     letter: 'ا',
     audioAssetPath: 'assets/Alif.m4a',
     words: [
-      Word(arabicText: "أَ", startSeconds: 1, endSeconds: 2),
-      Word(arabicText: "إِ", startSeconds: 3, endSeconds: 5),
-      Word(arabicText: "أُ", startSeconds: 5, endSeconds: 7),
-      Word(arabicText: "أَءْ", startSeconds: 8, endSeconds: 10),
-      Word(arabicText: "إِءْ", startSeconds: 11, endSeconds: 12),
-      Word(arabicText: "أُءْ", startSeconds: 14, endSeconds: 15),
+      Word(arabicText: "أَ", startMilliSeconds: 1000, endMilliSeconds: 2000),
+      Word(arabicText: "إِ", startMilliSeconds: 3000, endMilliSeconds: 5000),
+      Word(arabicText: "أُ", startMilliSeconds: 5000, endMilliSeconds: 7000),
+      Word(arabicText: "أَءْ", startMilliSeconds: 8000, endMilliSeconds: 10000),
+      Word(arabicText: "إِءْ", startMilliSeconds: 11000, endMilliSeconds: 12000),
+      Word(arabicText: "أُءْ", startMilliSeconds: 14000, endMilliSeconds: 15000),
     ],
   ),
   // Lam
   Lesson(
     letter: 'ل',
     audioAssetPath: 'assets/lam.m4a',
+    audioAssetPath: 'assets/Lam.m4a',
+    words: [
+      Word(arabicText: "لَ", startMilliSeconds: 0, endMilliSeconds: 2000),
+      Word(arabicText: "لِ", startMilliSeconds: 2000, endMilliSeconds: 5000),
+      Word(arabicText: "لُ", startMilliSeconds: 5000, endMilliSeconds: 7000),
+    ],
+  ),
     words: [
       Word(arabicText: "لَ", startSeconds: 0, endSeconds: 2),
       Word(arabicText: "لِ", startSeconds: 2, endSeconds: 5),

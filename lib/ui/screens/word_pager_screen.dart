@@ -55,7 +55,7 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
     unawaited(_playerManager.play(word));
 
     _autoPlayTimer?.cancel();
-    final holdDuration = Duration(seconds: word.endSeconds - word.startSeconds + 2);
+    final holdDuration = Duration(milliseconds: word.endMilliSeconds - word.startMilliSeconds + 2000);
     _autoPlayTimer = Timer(holdDuration, () {
       if (!_isAutoPlaying) return;
       if (_currentIndex < words.length - 1) {
