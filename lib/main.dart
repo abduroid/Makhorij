@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Makhorij',
       theme: ThemeData(
           colorScheme: .fromSeed(seedColor: Colors.deepPurple),
-        fontFamily: 'Uthmanic-script-Hafs'
+        fontFamily: 'Uthman-taha-naskh-regular'
       ),
       home: const LessonsScreen(),
     );
