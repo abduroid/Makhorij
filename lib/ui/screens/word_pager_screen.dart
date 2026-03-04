@@ -103,7 +103,7 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
               );
             },
           ),
-          if (_currentIndex > 0)
+          if (_currentIndex > 0 && !_isAutoPlaying)
             Align(
               alignment: Alignment.centerLeft,
               child: IconButton(
@@ -115,7 +115,7 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
                 ),
               ),
             ),
-          if (_currentIndex < words.length - 1)
+          if (_currentIndex < words.length - 1 && !_isAutoPlaying)
             Align(
               alignment: Alignment.centerRight,
               child: IconButton(
