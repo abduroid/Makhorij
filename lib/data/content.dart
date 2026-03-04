@@ -33,7 +33,7 @@ final lessons = [
         Word(arabicText: 'هَ', startMilliSeconds: 800, endMilliSeconds: 2200),
         Word(arabicText: 'هِ', startMilliSeconds: 3000, endMilliSeconds: 4400),
         Word(arabicText: 'هُ', startMilliSeconds: 5300, endMilliSeconds: 6600),
-        Word(arabicText: 'اه', startMilliSeconds: 7300, endMilliSeconds: 8600),
+        Word(arabicText: 'اَهْ', startMilliSeconds: 7300, endMilliSeconds: 8600),
         Word(arabicText: 'هَبْ', startMilliSeconds: 9800, endMilliSeconds: 10700),
         Word(arabicText: 'هَمْ', startMilliSeconds: 12300, endMilliSeconds: 13200),
         Word(arabicText: 'هَلْ', startMilliSeconds: 14600, endMilliSeconds: 15600),
