@@ -37,10 +37,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/Alif.m4a
-    - assets/Lam.m4a
-    - assets/Ha.m4a
-    - assets/Fa.m4a
+    - assets/audios/
 
   fonts:
     - family: Uthmanic-script-Hafs
