@@ -129,6 +129,30 @@ final lessons = [
       Word(startMilliSeconds: 59920, endMilliSeconds: 62720, arabicText: 'اَمْرَرْنَ'),
     ]
   ),
+  Lesson(
+    letter: 'ي',
+    audioAssetPath: 'assets/audios/Ya.m4a',
+    words: [
+      Word(startMilliSeconds: 01100, endMilliSeconds: 01940, arabicText: 'يَ'),
+      Word(startMilliSeconds: 03310, endMilliSeconds: 04280, arabicText: 'يِ'),
+      Word(startMilliSeconds: 05750, endMilliSeconds: 06750, arabicText: 'يُ'),
+      Word(startMilliSeconds: 08580, endMilliSeconds: 09540, arabicText: 'أَيْ'),
+      Word(startMilliSeconds: 10800, endMilliSeconds: 12860, arabicText: 'اَيْمُ'),
+      Word(startMilliSeconds: 14440, endMilliSeconds: 16140, arabicText: 'زَيْتُ'),
+      Word(startMilliSeconds: 18220, endMilliSeconds: 19900, arabicText: 'مَيْتُ'),
+      Word(startMilliSeconds: 21620, endMilliSeconds: 23220, arabicText: 'رَأْيُ'),
+      Word(startMilliSeconds: 24980, endMilliSeconds: 26580, arabicText: 'رَمْيُ'),
+      Word(startMilliSeconds: 28680, endMilliSeconds: 29860, arabicText: 'يَمَنْ'),
+      Word(startMilliSeconds: 31660, endMilliSeconds: 33380, arabicText: 'مَرْيَمْ'),
+      Word(startMilliSeconds: 35220, endMilliSeconds: 36940, arabicText: 'مَيْزَرْ'),
+      Word(startMilliSeconds: 38920, endMilliSeconds: 40660, arabicText: 'مَيْمَنْ'),
+      Word(startMilliSeconds: 42580, endMilliSeconds: 44160, arabicText: 'اَيْمَنْ'),
+      Word(startMilliSeconds: 46000, endMilliSeconds: 48560, arabicText: 'اَمْرَيْنِ'),
+      Word(startMilliSeconds: 51140, endMilliSeconds: 53500, arabicText: 'زَيْتَينِ'),
+      Word(startMilliSeconds: 56940, endMilliSeconds: 59180, arabicText: 'اَيْمَيْنِ'),
+      Word(startMilliSeconds: 61780, endMilliSeconds: 63980, arabicText: 'مَيْتَيْنِ'),
+    ]
+  ),
   // Ba
   Lesson(
     letter: 'ب',
