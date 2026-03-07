@@ -15,6 +15,68 @@ final lessons = [
       Word(arabicText: "أُءْ", startMilliSeconds: 14000, endMilliSeconds: 15000),
     ],
   ),
+  // Ro
+  Lesson(
+      letter: 'ر',
+      audioAssetPath: 'assets/audios/Ro.m4a',
+      words: [
+        Word(startMilliSeconds: 00840, endMilliSeconds: 01580, arabicText: 'رَ'),
+        Word(startMilliSeconds: 03200, endMilliSeconds: 03960, arabicText: 'رِ'),
+        Word(startMilliSeconds: 05360, endMilliSeconds: 06340, arabicText: 'رُ'),
+        Word(startMilliSeconds: 07820, endMilliSeconds: 08660, arabicText: 'رَرْ'),
+        Word(startMilliSeconds: 10600, endMilliSeconds: 11380, arabicText: 'أَرْ'),
+        Word(startMilliSeconds: 13500, endMilliSeconds: 14220, arabicText: 'إِرْ'),
+        Word(startMilliSeconds: 16240, endMilliSeconds: 16780, arabicText: 'أُرْ'),
+        Word(startMilliSeconds: 18855, endMilliSeconds: 19650, arabicText: 'رَأَ'),
+        Word(startMilliSeconds: 21770, endMilliSeconds: 22100, arabicText: 'رَأْ'),
+      ]
+  ),
+  // Za
+  Lesson(
+    letter: 'ز',
+    audioAssetPath: 'assets/audios/Za.m4a',
+    words: [
+      Word(startMilliSeconds: 01100, endMilliSeconds: 01890, arabicText: 'زَ'),
+      Word(startMilliSeconds: 03300, endMilliSeconds: 04180, arabicText: 'زِ'),
+      Word(startMilliSeconds: 05520, endMilliSeconds: 06470, arabicText: 'زُ'),
+      Word(startMilliSeconds: 07910, endMilliSeconds: 08930, arabicText: 'اَزْ'),
+      Word(startMilliSeconds: 10325, endMilliSeconds: 11200, arabicText: 'اِزْ'),
+      Word(startMilliSeconds: 12730, endMilliSeconds: 13610, arabicText: 'اُزْ'),
+      Word(startMilliSeconds: 15180, endMilliSeconds: 16130, arabicText: 'زَرْ'),
+      Word(startMilliSeconds: 17700, endMilliSeconds: 18790, arabicText: 'زِرْ'),
+      Word(startMilliSeconds: 20260, endMilliSeconds: 21310, arabicText: 'زُرْ'),
+      Word(startMilliSeconds: 22920, endMilliSeconds: 24500, arabicText: 'اَزْرُ'),
+      Word(startMilliSeconds: 26160, endMilliSeconds: 27700, arabicText: 'اِزْرُ'),
+      Word(startMilliSeconds: 29480, endMilliSeconds: 31180, arabicText: 'اُزْرُ'),
+      Word(startMilliSeconds: 32500, endMilliSeconds: 34100, arabicText: 'اُرْزُ'),
+    ]
+  ),
+  // Mim
+  Lesson(
+      letter: 'م',
+      audioAssetPath: 'assets/audios/Mim.m4a',
+      words: [
+        Word(startMilliSeconds: 01100, endMilliSeconds: 01900, arabicText: 'مَ'),
+        Word(startMilliSeconds: 03430, endMilliSeconds: 04400, arabicText: 'مِ'),
+        Word(startMilliSeconds: 06000, endMilliSeconds: 06940, arabicText: 'مُ'),
+        Word(startMilliSeconds: 08820, endMilliSeconds: 09775, arabicText: 'اَمْ'),
+        Word(startMilliSeconds: 11750, endMilliSeconds: 12780, arabicText: 'اِمْ'),
+        Word(startMilliSeconds: 14700, endMilliSeconds: 15590, arabicText: 'اُمْ'),
+        Word(startMilliSeconds: 17370, endMilliSeconds: 18370, arabicText: 'مُرْ'),
+        Word(startMilliSeconds: 20150, endMilliSeconds: 21450, arabicText: 'مُزْ'),
+        Word(startMilliSeconds: 23050, endMilliSeconds: 24100, arabicText: 'رُمْ'),
+        Word(startMilliSeconds: 25940, endMilliSeconds: 27065, arabicText: 'اَمَرَ'),
+        Word(startMilliSeconds: 29220, endMilliSeconds: 30400, arabicText: 'اُمِرَ'),
+        Word(startMilliSeconds: 32500, endMilliSeconds: 33950, arabicText: 'اَمْرُ'),
+        Word(startMilliSeconds: 35960, endMilliSeconds: 37360, arabicText: 'اِمْرُ'),
+        Word(startMilliSeconds: 39000, endMilliSeconds: 40900, arabicText: 'رَمْزُ'),
+        Word(startMilliSeconds: 42650, endMilliSeconds: 44200, arabicText: 'اِرْمِ'),
+        Word(startMilliSeconds: 45780, endMilliSeconds: 47250, arabicText: 'مَرْمرْ'),
+        Word(startMilliSeconds: 49000, endMilliSeconds: 50850, arabicText: 'رَمْرَمْ'),
+        Word(startMilliSeconds: 52800, endMilliSeconds: 55000, arabicText: 'زَمْزَمْ'),
+        Word(startMilliSeconds: 56500, endMilliSeconds: 58150, arabicText: 'اَرْزَمْ'),
+      ]
+  ),
   // Ba
   Lesson(
     letter: 'ب',
