@@ -15,6 +15,7 @@ final lessons = [
       Word(arabicText: "أُءْ", startMilliSeconds: 14000, endMilliSeconds: 15000),
     ],
   ),
+
   // Ro
   Lesson(
       letter: 'ر',
@@ -31,6 +32,7 @@ final lessons = [
         Word(startMilliSeconds: 21770, endMilliSeconds: 22100, arabicText: 'رَأْ'),
       ]
   ),
+
   // Za
   Lesson(
     letter: 'ز',
@@ -51,6 +53,7 @@ final lessons = [
       Word(startMilliSeconds: 32500, endMilliSeconds: 34100, arabicText: 'اُرْزُ'),
     ]
   ),
+
   // Mim
   Lesson(
       letter: 'م',
@@ -77,6 +80,7 @@ final lessons = [
         Word(startMilliSeconds: 56500, endMilliSeconds: 58150, arabicText: 'اَرْزَمْ'),
       ]
   ),
+
   // Ta
   Lesson(
     letter: 'ت',
@@ -102,6 +106,7 @@ final lessons = [
       Word(startMilliSeconds: 54820, endMilliSeconds: 56700, arabicText: 'مُرِرْتُمْ'),
     ]
   ),
+
   // Nun
   Lesson(
     letter: 'ن',
@@ -129,6 +134,8 @@ final lessons = [
       Word(startMilliSeconds: 59920, endMilliSeconds: 62720, arabicText: 'اَمْرَرْنَ'),
     ]
   ),
+
+  // Ya
   Lesson(
     letter: 'ي',
     audioAssetPath: 'assets/audios/Ya.m4a',
@@ -153,6 +160,7 @@ final lessons = [
       Word(startMilliSeconds: 61780, endMilliSeconds: 63980, arabicText: 'مَيْتَيْنِ'),
     ]
   ),
+
   // Ba
   Lesson(
     letter: 'ب',
@@ -178,6 +186,7 @@ final lessons = [
       Word(startMilliSeconds: 63940, endMilliSeconds: 67440, arabicText: 'زَيْنَبَيْنِ'),
     ]
   ),
+
   // Kaf
   Lesson(
     letter: 'ك',
@@ -207,6 +216,7 @@ final lessons = [
       Word(startMilliSeconds: 77900, endMilliSeconds: 79800, arabicText: 'مُمْكِنْ'),
     ]
   ),
+
   // Lam
   Lesson(
     letter: 'ل',
@@ -239,7 +249,8 @@ final lessons = [
       Word(startMilliSeconds: 82242, endMilliSeconds: 84896, arabicText: 'مُتَزَلْزِلْ'),
     ],
   ),
-  // Vuav
+
+  // Vav
   Lesson(
     letter: 'و',
     audioAssetPath: 'assets/audios/Vav.m4a',
@@ -269,6 +280,7 @@ final lessons = [
       Word(startMilliSeconds: 80435, endMilliSeconds: 82992, arabicText: 'اَوْتَرْتُمْ'),
     ],
   ),
+
   // Ha
   Lesson(
       letter: 'ه',
@@ -298,6 +310,7 @@ final lessons = [
         Word(arabicText: 'اَمْهِلْهُمْ', startMilliSeconds: 59500, endMilliSeconds: 62100),
       ]
   ),
+
   // Fa
   Lesson(
       letter: 'ف',
@@ -330,5 +343,40 @@ final lessons = [
         Word(arabicText: 'اِفْتَكَرَ', startMilliSeconds: 77560, endMilliSeconds: 79280),
         Word(arabicText: 'يَفْتَكِرُ', startMilliSeconds: 81380, endMilliSeconds: 83320),
       ]
-  )
+  ),
+
+  // Qof
+  Lesson(
+    letter: 'ق',
+    audioAssetPath: 'assets/audios/Qof.m4a',
+    words: [
+      Word(startMilliSeconds: 01040, endMilliSeconds: 01536, arabicText: 'قَ'),
+      Word(startMilliSeconds: 03351, endMilliSeconds: 03877, arabicText: 'قِ'),
+      Word(startMilliSeconds: 05600, endMilliSeconds: 06260, arabicText: 'قُ'),
+      Word(startMilliSeconds: 07960, endMilliSeconds: 08556, arabicText: 'أَقْ'),
+      Word(startMilliSeconds: 10700, endMilliSeconds: 11580, arabicText: 'زُقْ'),
+      Word(startMilliSeconds: 13260, endMilliSeconds: 14060, arabicText: 'قِنْ'),
+      Word(startMilliSeconds: 15680, endMilliSeconds: 16540, arabicText: 'قُلْ'),
+      Word(startMilliSeconds: 18380, endMilliSeconds: 19200, arabicText: 'قُمْ'),
+      Word(startMilliSeconds: 20860, endMilliSeconds: 21760, arabicText: 'قِفْ'),
+      Word(startMilliSeconds: 23540, endMilliSeconds: 24277, arabicText: 'قِهْ'),
+      Word(startMilliSeconds: 26360, endMilliSeconds: 27660, arabicText: 'قَلْبُ'),
+      Word(startMilliSeconds: 29680, endMilliSeconds: 30820, arabicText: 'قَبْلُ'),
+      Word(startMilliSeconds: 32920, endMilliSeconds: 34558, arabicText: 'فَوْقُ'),
+      Word(startMilliSeconds: 36480, endMilliSeconds: 37380, arabicText: 'قَلَمْ'),
+      Word(startMilliSeconds: 39840, endMilliSeconds: 40620, arabicText: 'قَمَرْ'),
+      Word(startMilliSeconds: 42940, endMilliSeconds: 43940, arabicText: 'لَقَبْ'),
+      Word(startMilliSeconds: 46500, endMilliSeconds: 48020, arabicText: 'قَمْقُمْ'),
+      Word(startMilliSeconds: 50440, endMilliSeconds: 51940, arabicText: 'اِقْتَرَبَ'),
+      Word(startMilliSeconds: 54500, endMilliSeconds: 56280, arabicText: 'يَقْتَرِبُ'),
+      Word(startMilliSeconds: 59440, endMilliSeconds: 61100, arabicText: 'اِنْقَلَبَ'),
+      Word(startMilliSeconds: 63957, endMilliSeconds: 65800, arabicText: 'يَنْقَلِبُ'),
+      Word(startMilliSeconds: 69220, endMilliSeconds: 70000, arabicText: 'كَدَرْ'),
+      Word(startMilliSeconds: 72340, endMilliSeconds: 73120, arabicText: 'قَدَرْ'),
+      Word(startMilliSeconds: 75599, endMilliSeconds: 76540, arabicText: 'فَلَكْ'),
+      Word(startMilliSeconds: 79120, endMilliSeconds: 80140, arabicText: 'فَلَقْ'),
+      Word(startMilliSeconds: 82240, endMilliSeconds: 83620, arabicText: 'فَرْكُ'),
+      Word(startMilliSeconds: 85900, endMilliSeconds: 87240, arabicText: 'فَرْقُ'),
+    ],
+  ),
 ];
