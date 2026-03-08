@@ -50,6 +50,7 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
     }
   }
 
+  // Stop auto-playing when pagecontroller took control or manual playback is triggered.
   void _scheduleAutoPlay() {
     final word = words[_currentIndex];
     unawaited(_playerManager.play(word));
