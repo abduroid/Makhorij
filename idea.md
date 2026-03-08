@@ -18,6 +18,9 @@
 
 ## Features
  ###  Hijjalash
-    Highlights each letter of a word when it's being pronunced.
+    Highlights (changing tint color) each letter of a word when it's being pronunced.
     Initial - just same duration for each letter
     Future - different duration for each letter based on the pronunciation of the word.
+ 
+ ### Splitting the word into letters
+    A button to enable splitting the word into letters, so the player can see the individual letters of the word and their pronunciation.
