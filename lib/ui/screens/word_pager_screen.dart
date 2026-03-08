@@ -55,6 +55,7 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
     unawaited(_playerManager.play(word));
 
     _autoPlayTimer?.cancel();
+    // TODO It's holding shorter than needed. The goal duration of the word from teacher's recording + 2000.
     final holdDuration = Duration(milliseconds: word.endMilliSeconds - word.startMilliSeconds + 2000);
     _autoPlayTimer = Timer(holdDuration, () {
       if (!_isAutoPlaying) return;
