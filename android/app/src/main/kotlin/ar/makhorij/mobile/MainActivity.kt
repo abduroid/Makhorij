@@ -1,4 +1,4 @@
-package com.example.makhorij_app
+package ar.makhorij.mobile
 
 import io.flutter.embedding.android.FlutterActivity
 
