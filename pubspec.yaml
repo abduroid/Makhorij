@@ -16,6 +16,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   just_audio: ^0.10.5
   auto_size_text: ^3.0.0
+  record: ^6.2.0
 
 dev_dependencies:
   flutter_test:
