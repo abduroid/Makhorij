@@ -473,7 +473,7 @@ final lessons = [
       Word(startMilliSeconds: 76380, endMilliSeconds: 78080, arabicText: 'يُثْبِتُ'),
       Word(startMilliSeconds: 81006, endMilliSeconds: 83240, arabicText: 'اِسْتَكْثَرَ'),
       Word(startMilliSeconds: 86700, endMilliSeconds: 89160, arabicText: 'يَسْتَكْثِرُ'),
-      Word(startMilliSeconds: 92968, endMilliSeconds: 95320, arabicText: 'اِسْتَثْقَلْ'),
+      Word(startMilliSeconds: 92968, endMilliSeconds: 95320, arabicText: 'اِسْتَثْقَلَ'),
       Word(startMilliSeconds: 99164, endMilliSeconds: 101500, arabicText: 'يَسْتَثْقِلُ'),
       Word(startMilliSeconds: 105520, endMilliSeconds: 106600, arabicText: 'سَمَرْ'),
       Word(startMilliSeconds: 109060, endMilliSeconds: 110180, arabicText: 'ثَمَرْ'),
