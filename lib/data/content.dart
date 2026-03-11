@@ -435,7 +435,7 @@ final lessons = [
       Word(startMilliSeconds: 47060, endMilliSeconds: 48340, arabicText: 'فَرَسْ'),
       Word(startMilliSeconds: 51515, endMilliSeconds: 53325, arabicText: 'مَسلَكْ'),
       Word(startMilliSeconds: 55885, endMilliSeconds: 57620, arabicText: 'مَسْكَنْ'),
-      Word(startMilliSeconds: 60720, endMilliSeconds: 62480, arabicText: 'مْسْلِمْ'),
+      Word(startMilliSeconds: 60720, endMilliSeconds: 62480, arabicText: 'مُسْلِمْ'),
       Word(startMilliSeconds: 65680, endMilliSeconds: 67240, arabicText: 'مُسْرِفْ'),
       Word(startMilliSeconds: 70840, endMilliSeconds: 72780, arabicText: 'سِمْسِمْ'),
       Word(startMilliSeconds: 76241, endMilliSeconds: 77680, arabicText: 'اَسْلَمَ'),
