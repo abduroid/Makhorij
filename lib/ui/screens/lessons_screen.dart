@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../data/content.dart';
-import '../../models/lesson.dart';
-import '../../models/word.dart';
-import 'word_pager_screen.dart';
 
 class LessonsScreen extends StatelessWidget {
   const LessonsScreen({super.key});
@@ -23,11 +20,9 @@ class LessonsScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           final lesson = lessons[index];
           return GestureDetector(
-            onTap: () => Navigator.push(
+            onTap: () => Navigator.pushNamed(
               context,
-              MaterialPageRoute(
-                builder: (_) => WordPagerScreen(lesson: lesson),
-              ),
+              '/lesson/${lesson.routeName}/1',
             ),
             child: Card(
               child: Center(

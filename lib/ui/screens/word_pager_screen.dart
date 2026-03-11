@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../models/lesson.dart';
 import '../../models/word.dart';
@@ -9,13 +10,16 @@ import '../widgets/word_card.dart';
 
 class WordPagerScreen extends StatefulWidget {
   final Lesson lesson;
+  final int initialPage;
 
-  const WordPagerScreen({super.key, required this.lesson});
+  const WordPagerScreen({super.key, required this.lesson, this.initialPage = 0});
 
   @override
   State<WordPagerScreen> createState() => _WordPagerScreenState();
 }
 
+// TODO #1 Show page number # / $page_count
+// TODO #1 Button to navigate to the first element.
 class _WordPagerScreenState extends State<WordPagerScreen> {
   late final PlayerManager _playerManager;
   late final PageController _pageController;
@@ -30,7 +34,8 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
     super.initState();
     _playerManager = PlayerManager(widget.lesson.audioAssetPath);
     unawaited(_playerManager.init());
-    _pageController = PageController();
+    _currentIndex = widget.initialPage;
+    _pageController = PageController(initialPage: widget.initialPage);
   }
 
   @override
@@ -43,6 +48,10 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
 
   void _onPageChanged(int index) {
     setState(() => _currentIndex = index);
+    unawaited(SystemNavigator.routeInformationUpdated(
+      uri: Uri.parse('/lesson/${widget.lesson.routeName}/${index + 1}'),
+      replace: true,
+    ));
     if (_isAutoPlaying) {
       _scheduleAutoPlay();
     } else {
