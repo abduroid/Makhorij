@@ -521,7 +521,7 @@ final lessons = [
       Word(startMilliSeconds: 00900, endMilliSeconds: 01870, arabicText: 'طَ'),
       Word(startMilliSeconds: 03203, endMilliSeconds: 03960, arabicText: 'طِ'),
       Word(startMilliSeconds: 05481, endMilliSeconds: 06840, arabicText: 'طُ'),
-      Word(startMilliSeconds: 07683, endMilliSeconds: 08580, arabicText: '4'),
+      Word(startMilliSeconds: 07683, endMilliSeconds: 08580, arabicText: 'اَطْ'),
       Word(startMilliSeconds: 10112, endMilliSeconds: 11329, arabicText: 'طَاْ'),
       Word(startMilliSeconds: 12757, endMilliSeconds: 13766, arabicText: 'طَيْ'),
       Word(startMilliSeconds: 15310, endMilliSeconds: 16379, arabicText: 'شَطْ'),
