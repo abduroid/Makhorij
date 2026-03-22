@@ -112,32 +112,40 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.sizeOf(context).width;
+    final pagerSize = min(screenWidth, 500.0) * 0.75;
+
     return Scaffold(
       backgroundColor: const Color(0xFFF2F2F2),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 32.0),
-        child: Column(
-          children: [
-            Expanded(
-              child: Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    SizedBox(
-                      height: MediaQuery.sizeOf(context).width * 0.75,
-                      child: _buildPager(),
+      body: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 500),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 32.0),
+            child: Column(
+              children: [
+                Expanded(
+                  child: Center(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        SizedBox(
+                          height: pagerSize,
+                          child: _buildPager(),
+                        ),
+                        const SizedBox(height: 48),
+                        FractionallySizedBox(
+                          widthFactor: 0.75,
+                          child: _buildWordNav(),
+                        ),
+                      ],
                     ),
-                    const SizedBox(height: 48),
-                    FractionallySizedBox(
-                      widthFactor: 0.75,
-                      child: _buildWordNav(),
-                    ),
-                  ],
+                  ),
                 ),
-              ),
+                _buildControls(),
+              ],
             ),
-            _buildControls(),
-          ],
+          ),
         ),
       ),
     );
