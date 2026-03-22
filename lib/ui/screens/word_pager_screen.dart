@@ -233,9 +233,10 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
               await _cancelRecordingIfActive();
               unawaited(_playerManager.playTeacherRecording(_currentWord));
             },
+      backgroundColor: Colors.black,
       child: _isTeacherPlaying
-          ? const Icon(Icons.graphic_eq)
-          : const Icon(Icons.play_arrow),
+          ? const Icon(Icons.graphic_eq, color: Colors.white)
+          : const Icon(Icons.play_arrow, color: Colors.white),
     );
   }
 
@@ -255,9 +256,10 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
               await _cancelRecordingIfActive();
               unawaited(_playerManager.playStudentRecording(_currentRecordingPath!));
             },
+      backgroundColor: Colors.grey,
       child: _isStudentPlaying
-          ? const Icon(Icons.graphic_eq)
-          : const Icon(Icons.play_arrow),
+          ? const Icon(Icons.graphic_eq, color: Colors.white)
+          : const Icon(Icons.play_arrow, color: Colors.white),
     );
   }
 
@@ -269,7 +271,7 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
       backgroundColor: _isRecording ? Colors.red : null,
       child: Icon(
         _isRecording ? Icons.stop : Icons.mic,
-        color: _isRecording ? Colors.white : const Color(0xFFD4622A),
+        color: _isRecording ? Colors.white : Colors.black,
       ),
     );
   }
