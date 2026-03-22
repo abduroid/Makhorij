@@ -302,7 +302,14 @@ class _CircleButton extends StatelessWidget {
         child: InkWell(
           onTap: onPressed,
           customBorder: const CircleBorder(),
-          child: Center(child: child),
+          child: LayoutBuilder(
+            builder: (context, constraints) => Center(
+              child: IconTheme(
+                data: IconThemeData(size: constraints.maxWidth * 0.45),
+                child: child,
+              ),
+            ),
+          ),
         ),
       ),
     );
