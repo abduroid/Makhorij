@@ -115,14 +115,23 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFFF2F2F2),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
-            child: Column(
-              children: [
-                Expanded(child: _buildPager()),
-                _buildWordNav(),
-              ],
+            child: Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SizedBox(
+                    height: MediaQuery.sizeOf(context).width * 0.75,
+                    child: _buildPager(),
+                  ),
+                  const SizedBox(height: 48),
+                  FractionallySizedBox(
+                    widthFactor: 0.75,
+                    child: _buildWordNav(),
+                  ),
+                ],
+              ),
             ),
           ),
           _buildControls(),
@@ -167,7 +176,7 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
 
   Widget _buildWordNav() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: const EdgeInsets.symmetric(vertical: 8),
       child: Row(
         children: [
           Expanded(
@@ -298,8 +307,8 @@ class _DashedCircleSlot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 52,
-      height: 52,
+      width: 46,
+      height: 46,
       child: CustomPaint(
         painter: _DashedCirclePainter(
           color: Theme.of(context).colorScheme.outline,
