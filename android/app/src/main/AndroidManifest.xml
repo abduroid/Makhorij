@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="makhorij_app"
+        android:label="Makhorij"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
