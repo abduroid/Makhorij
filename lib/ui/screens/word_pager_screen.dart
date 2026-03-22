@@ -46,7 +46,7 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
     _recordManager = RecordManager(widget.lesson);
     unawaited(_playerManager.init());
     _currentIndex = widget.initialPage;
-    _pageController = PageController(initialPage: widget.initialPage);
+    _pageController = PageController(initialPage: widget.initialPage, viewportFraction: 0.8);
     _subscribeToPlayerStates();
     unawaited(_loadCurrentRecording());
   }
@@ -113,51 +113,69 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFF2F2F2),
       body: Column(
         children: [
           Expanded(
-            child: Stack(
-              children: [
-                PageView.builder(
-                  controller: _pageController,
-                  itemCount: words.length,
-                  onPageChanged: _onPageChanged,
-                  itemBuilder: (context, index) {
-                    final word = words[index];
-                    return WordCard(
-                      word: word,
-                      onTap: () => unawaited(_playerManager.playTeacherRecording(word)),
-                    );
+            child: PageView.builder(
+              controller: _pageController,
+              clipBehavior: Clip.none,
+              itemCount: words.length,
+              onPageChanged: _onPageChanged,
+              itemBuilder: (context, index) {
+                final word = words[index];
+                return AnimatedBuilder(
+                  animation: _pageController,
+                  builder: (context, child) {
+                    double scale = 1.0;
+                    if (_pageController.hasClients && _pageController.page != null) {
+                      scale = (1.0 - (_pageController.page! - index).abs() * 0.15).clamp(0.85, 1.0);
+                    }
+                    return Transform.scale(scale: scale, child: child!);
                   },
-                ),
-                if (_currentIndex > 0)
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: IconButton(
-                      icon: const Icon(Icons.chevron_left),
-                      iconSize: 40,
-                      onPressed: () => _pageController.previousPage(
-                        duration: const Duration(milliseconds: 200),
-                        curve: Curves.linear,
-                      ),
-                    ),
+                  child: WordCard(
+                    word: word,
+                    onTap: () => unawaited(_playerManager.playTeacherRecording(word)),
                   ),
-                if (_currentIndex < words.length - 1)
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: IconButton(
-                      icon: const Icon(Icons.chevron_right),
-                      iconSize: 40,
-                      onPressed: () => _pageController.nextPage(
-                        duration: const Duration(milliseconds: 200),
-                        curve: Curves.linear,
-                      ),
-                    ),
-                  ),
-              ],
+                );
+              },
             ),
           ),
+          _buildWordNav(),
           _buildControls(),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildWordNav() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      child: Row(
+        children: [
+          Expanded(
+            child: _NavButton(
+              icon: Icons.chevron_left,
+              onPressed: _currentIndex > 0
+                  ? () => _pageController.previousPage(
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeInOut,
+                      )
+                  : null,
+            ),
+          ),
+          const SizedBox(width: 8),
+          Expanded(
+            child: _NavButton(
+              icon: Icons.chevron_right,
+              onPressed: _currentIndex < words.length - 1
+                  ? () => _pageController.nextPage(
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeInOut,
+                      )
+                  : null,
+            ),
+          ),
         ],
       ),
     );
@@ -214,7 +232,10 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
           ? () => unawaited(_stopRecording())
           : () => unawaited(_startRecording()),
       backgroundColor: _isRecording ? Colors.red : null,
-      child: Icon(_isRecording ? Icons.stop : Icons.mic),
+      child: Icon(
+        _isRecording ? Icons.stop : Icons.mic,
+        color: _isRecording ? Colors.white : const Color(0xFFD4622A),
+      ),
     );
   }
 }
@@ -232,14 +253,24 @@ class _CircleButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        shape: const CircleBorder(),
-        padding: const EdgeInsets.all(16),
-        backgroundColor: backgroundColor,
+    final hasBackground = backgroundColor != null;
+    return SizedBox(
+      width: 52,
+      height: 52,
+      child: Material(
+        color: backgroundColor ?? Colors.white,
+        shape: CircleBorder(
+          side: hasBackground
+              ? BorderSide.none
+              : const BorderSide(color: Color(0xFFE0E0E0)),
+        ),
+        elevation: hasBackground ? 2 : 1,
+        child: InkWell(
+          onTap: onPressed,
+          customBorder: const CircleBorder(),
+          child: Center(child: child),
+        ),
       ),
-      child: child,
     );
   }
 }
@@ -250,11 +281,38 @@ class _DashedCircleSlot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 56,
-      height: 56,
+      width: 52,
+      height: 52,
       child: CustomPaint(
         painter: _DashedCirclePainter(
           color: Theme.of(context).colorScheme.outline,
+        ),
+      ),
+    );
+  }
+}
+
+class _NavButton extends StatelessWidget {
+  final IconData icon;
+  final VoidCallback? onPressed;
+
+  const _NavButton({required this.icon, required this.onPressed});
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(12),
+      elevation: 1,
+      child: InkWell(
+        onTap: onPressed,
+        borderRadius: BorderRadius.circular(12),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 12),
+          child: Icon(
+            icon,
+            color: onPressed != null ? const Color(0xFF1A1A2E) : const Color(0xFFCCCCCC),
+          ),
         ),
       ),
     );
