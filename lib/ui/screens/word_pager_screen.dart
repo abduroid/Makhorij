@@ -114,28 +114,31 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF2F2F2),
-      body: Column(
-        children: [
-          Expanded(
-            child: Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  SizedBox(
-                    height: MediaQuery.sizeOf(context).width * 0.75,
-                    child: _buildPager(),
-                  ),
-                  const SizedBox(height: 48),
-                  FractionallySizedBox(
-                    widthFactor: 0.75,
-                    child: _buildWordNav(),
-                  ),
-                ],
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 32.0),
+        child: Column(
+          children: [
+            Expanded(
+              child: Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SizedBox(
+                      height: MediaQuery.sizeOf(context).width * 0.75,
+                      child: _buildPager(),
+                    ),
+                    const SizedBox(height: 48),
+                    FractionallySizedBox(
+                      widthFactor: 0.75,
+                      child: _buildWordNav(),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          _buildControls(),
-        ],
+            _buildControls(),
+          ],
+        ),
       ),
     );
   }
@@ -209,13 +212,14 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
 
   Widget _buildControls() {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 24),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          _teacherButton(),
-          _studentSlot(),
-          _recordButton(),
+          Expanded(child: _teacherButton()),
+          const SizedBox(width: 32),
+          Expanded(child: _studentButton()),
+          const SizedBox(width: 32),
+          Expanded(child: _recordButton()),
         ],
       ),
     );
@@ -235,9 +239,14 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
     );
   }
 
-  Widget _studentSlot() {
+  Widget _studentButton() {
     if (_currentRecordingPath == null) {
-      return const _DashedCircleSlot();
+      return Center(
+        child: FractionallySizedBox(
+          widthFactor: 0.88,
+          child: AspectRatio(aspectRatio: 1.0, child: _DashedCircleSlot()),
+        ),
+      );
     }
     return _CircleButton(
       onPressed: _isStudentPlaying
@@ -280,9 +289,8 @@ class _CircleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final hasBackground = backgroundColor != null;
-    return SizedBox(
-      width: 52,
-      height: 52,
+    return AspectRatio(
+      aspectRatio: 1.0,
       child: Material(
         color: backgroundColor ?? Colors.white,
         shape: CircleBorder(
@@ -306,13 +314,9 @@ class _DashedCircleSlot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 46,
-      height: 46,
-      child: CustomPaint(
-        painter: _DashedCirclePainter(
-          color: Theme.of(context).colorScheme.outline,
-        ),
+    return CustomPaint(
+      painter: _DashedCirclePainter(
+        color: Theme.of(context).colorScheme.outline,
       ),
     );
   }
