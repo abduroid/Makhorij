@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:just_audio/just_audio.dart';
 
 import '../models/word.dart';
@@ -49,9 +50,13 @@ class PlayerManager {
     unawaited(_teacherPlayer.play());
   }
 
-  Future<void> playStudentRecording(String filePath) async {
+  Future<void> playStudentRecording(String path) async {
     await stop();
-    await _studentPlayer.setFilePath(filePath);
+    if (kIsWeb) {
+      await _studentPlayer.setUrl(path);
+    } else {
+      await _studentPlayer.setFilePath(path);
+    }
     if (_disposed) return;
     unawaited(_studentPlayer.play());
   }

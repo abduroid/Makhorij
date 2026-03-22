@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:math';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -80,7 +79,7 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
       uri: Uri.parse('/lesson/${widget.lesson.routeName}/${index + 1}'),
       replace: true,
     ));
-    if (_isRecording && !kIsWeb) {
+    if (_isRecording) {
       unawaited(_recordManager.cancelRecording());
       setState(() => _isRecording = false);
     }
@@ -89,26 +88,23 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
   }
 
   Future<void> _loadCurrentRecording() async {
-    if (kIsWeb) return;
     final path = await _recordManager.getRecording(_currentWord);
     if (mounted) setState(() => _currentRecordingPath = path);
   }
 
   Future<void> _cancelRecordingIfActive() async {
-    if (!_isRecording || kIsWeb) return;
+    if (!_isRecording) return;
     await _recordManager.cancelRecording();
     if (mounted) setState(() => _isRecording = false);
   }
 
   Future<void> _startRecording() async {
-    if (kIsWeb) return;
     await _playerManager.stop();
     final started = await _recordManager.startRecording(_currentWord);
     if (mounted && started) setState(() => _isRecording = true);
   }
 
   Future<void> _stopRecording() async {
-    if (kIsWeb) return;
     await _recordManager.stopRecording();
     if (mounted) setState(() => _isRecording = false);
     await _loadCurrentRecording();
