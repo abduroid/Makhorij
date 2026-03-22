@@ -46,7 +46,7 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
     _recordManager = RecordManager(widget.lesson);
     unawaited(_playerManager.init());
     _currentIndex = widget.initialPage;
-    _pageController = PageController(initialPage: widget.initialPage, viewportFraction: 0.8);
+    _pageController = PageController(initialPage: widget.initialPage, viewportFraction: 0.75);
     _subscribeToPlayerStates();
     unawaited(_loadCurrentRecording());
   }
@@ -115,36 +115,53 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFFF2F2F2),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
-            child: PageView.builder(
-              controller: _pageController,
-              clipBehavior: Clip.none,
-              itemCount: words.length,
-              onPageChanged: _onPageChanged,
-              itemBuilder: (context, index) {
-                final word = words[index];
-                return AnimatedBuilder(
-                  animation: _pageController,
-                  builder: (context, child) {
-                    double scale = 1.0;
-                    if (_pageController.hasClients && _pageController.page != null) {
-                      scale = (1.0 - (_pageController.page! - index).abs() * 0.15).clamp(0.85, 1.0);
-                    }
-                    return Transform.scale(scale: scale, child: child!);
-                  },
-                  child: WordCard(
-                    word: word,
-                    onTap: () => unawaited(_playerManager.playTeacherRecording(word)),
-                  ),
-                );
-              },
+            child: Column(
+              children: [
+                Expanded(child: _buildPager()),
+                _buildWordNav(),
+              ],
             ),
           ),
-          _buildWordNav(),
           _buildControls(),
         ],
       ),
+    );
+  }
+
+  Widget _buildPager() {
+    return PageView.builder(
+      controller: _pageController,
+      clipBehavior: Clip.none,
+      itemCount: words.length,
+      onPageChanged: _onPageChanged,
+      itemBuilder: (context, index) {
+        final word = words[index];
+        return AnimatedBuilder(
+          animation: _pageController,
+          builder: (context, child) {
+            double scale = 1.0;
+            double dx = 0.0;
+            if (_pageController.hasClients && _pageController.page != null) {
+              final pageDiff = _pageController.page! - index;
+              final absDiff = pageDiff.abs();
+              final t = (1.0 - absDiff).clamp(0.0, 1.0);
+              scale = (1.0 - absDiff * 0.25).clamp(0.75, 1.0);
+              dx = 16.0 * (1.0 - t) * pageDiff.sign;
+            }
+            return Transform.translate(
+              offset: Offset(dx, 0),
+              child: Transform.scale(scale: scale, child: child!),
+            );
+          },
+          child: WordCard(
+            word: word,
+            onTap: () => unawaited(_playerManager.playTeacherRecording(word)),
+          ),
+        );
+      },
     );
   }
 

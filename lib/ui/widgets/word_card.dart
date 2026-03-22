@@ -11,37 +11,34 @@ class WordCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8),
-      child: Center(
-        child: AspectRatio(
-          aspectRatio: 1.0,
-          child: GestureDetector(
-            onTap: onTap,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(24),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.08),
-                    blurRadius: 20,
-                    offset: const Offset(0, 4),
+    return Center(
+      child: AspectRatio(
+        aspectRatio: 1.0,
+        child: GestureDetector(
+          onTap: onTap,
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(24),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.08),
+                  blurRadius: 20,
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(32),
+                child: AutoSizeText(
+                  word.arabicText,
+                  maxLines: 1,
+                  style: const TextStyle(
+                    fontSize: 120,
+                    color: Color(0xFF1A1A2E),
                   ),
-                ],
-              ),
-              child: Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(32),
-                  child: AutoSizeText(
-                    word.arabicText,
-                    maxLines: 1,
-                    style: const TextStyle(
-                      fontSize: 120,
-                      color: Color(0xFF1A1A2E),
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),
