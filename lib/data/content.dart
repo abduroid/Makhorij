@@ -631,7 +631,7 @@ final lessons = [
       Word(startMilliSeconds: 32957, endMilliSeconds: 34640, arabicText: 'مِنْحَرْ'),
       Word(startMilliSeconds: 36918, endMilliSeconds: 38480, arabicText: 'مَحْفَاْ'),
       Word(startMilliSeconds: 41009, endMilliSeconds: 42660, arabicText: 'اَحْسَنْ'),
-      Word(startMilliSeconds: 44863, endMilliSeconds: 46740, arabicText: 'اِنْتَحَنَ'),
+      Word(startMilliSeconds: 44863, endMilliSeconds: 46740, arabicText: 'اِمْتَحَنَ'),
       Word(startMilliSeconds: 48729, endMilliSeconds: 50920, arabicText: 'يَمْتَحِنُ'),
       Word(startMilliSeconds: 52672, endMilliSeconds: 54480, arabicText: 'اِحْتَمَاَ'),
       Word(startMilliSeconds: 56796, endMilliSeconds: 58821, arabicText: 'يَحْتَمِاُ'),
