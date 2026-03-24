@@ -110,14 +110,58 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
     await _loadCurrentRecording();
   }
 
+  KeyEventResult _handleKeyEvent(FocusNode node, KeyEvent event) {
+    if (event is! KeyDownEvent) return KeyEventResult.ignored;
+    switch (event.logicalKey) {
+      case LogicalKeyboardKey.arrowLeft:
+        if (_currentIndex > 0) {
+          _pageController.previousPage(
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeInOut,
+          );
+        }
+        return KeyEventResult.handled;
+      case LogicalKeyboardKey.arrowRight:
+        if (_currentIndex < words.length - 1) {
+          _pageController.nextPage(
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeInOut,
+          );
+        }
+        return KeyEventResult.handled;
+      case LogicalKeyboardKey.space:
+        if (!_isRecording && !_isTeacherPlaying) {
+          unawaited(_playerManager.playTeacherRecording(_currentWord));
+        }
+        return KeyEventResult.handled;
+      case LogicalKeyboardKey.keyR:
+        if (_isRecording) {
+          unawaited(_stopRecording());
+        } else {
+          unawaited(_startRecording());
+        }
+        return KeyEventResult.handled;
+      case LogicalKeyboardKey.keyS:
+        if (_currentRecordingPath != null && !_isRecording && !_isStudentPlaying) {
+          unawaited(_playerManager.playStudentRecording(_currentRecordingPath!));
+        }
+        return KeyEventResult.handled;
+    }
+    return KeyEventResult.ignored;
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     final isLandscape = size.width > size.height;
 
-    return Scaffold(
-      backgroundColor: const Color(0xFFF2F2F2),
-      body: isLandscape ? _buildLandscapeLayout() : _buildPortraitLayout(context),
+    return Focus(
+      autofocus: true,
+      onKeyEvent: _handleKeyEvent,
+      child: Scaffold(
+        backgroundColor: const Color(0xFFF2F2F2),
+        body: isLandscape ? _buildLandscapeLayout() : _buildPortraitLayout(context),
+      ),
     );
   }
 
