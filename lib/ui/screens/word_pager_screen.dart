@@ -112,42 +112,104 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.sizeOf(context).width;
-    final pagerSize = min(screenWidth, 500.0) * 0.75;
+    final size = MediaQuery.sizeOf(context);
+    final isLandscape = size.width > size.height;
 
     return Scaffold(
       backgroundColor: const Color(0xFFF2F2F2),
-      body: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 500),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 32.0),
-            child: Column(
-              children: [
-                Expanded(
-                  child: Center(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        SizedBox(
-                          height: pagerSize,
-                          child: _buildPager(),
-                        ),
-                        const SizedBox(height: 48),
-                        FractionallySizedBox(
-                          widthFactor: 0.75,
-                          child: _buildWordNav(),
-                        ),
-                      ],
-                    ),
+      body: isLandscape ? _buildLandscapeLayout() : _buildPortraitLayout(context),
+    );
+  }
+
+  Widget _buildPortraitLayout(BuildContext context) {
+    final pagerSize = min(MediaQuery.sizeOf(context).width, 500.0) * 0.75;
+
+    return Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 500),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 32.0),
+          child: Column(
+            children: [
+              Expanded(
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      SizedBox(
+                        height: pagerSize,
+                        child: _buildPager(),
+                      ),
+                      const SizedBox(height: 48),
+                      FractionallySizedBox(
+                        widthFactor: 0.75,
+                        child: _buildWordNav(),
+                      ),
+                    ],
                   ),
                 ),
-                _buildControls(),
-              ],
-            ),
+              ),
+              _buildControls(),
+            ],
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildLandscapeLayout() {
+    return Padding(
+      padding: const EdgeInsets.all(32.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Expanded(flex: 4, child: ClipRect(child: _buildPager())),
+          const SizedBox(width: 16),
+          Expanded(child: _buildWordNavVertical()),
+          const SizedBox(width: 16),
+          SizedBox(
+            width: 96,
+            child: Column(
+              children: [
+                Expanded(child: Padding(padding: const EdgeInsets.all(8), child: _recordButton())),
+                Expanded(child: Padding(padding: const EdgeInsets.all(8), child: _studentButton())),
+                Expanded(child: Padding(padding: const EdgeInsets.all(8), child: _teacherButton())),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildWordNavVertical() {
+    return Column(
+      mainAxisSize: MainAxisSize.max,
+      children: [
+        Expanded(
+          child: _NavButton(
+            icon: Icons.chevron_left,
+            onPressed: _currentIndex > 0
+                ? () => _pageController.previousPage(
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.easeInOut,
+                    )
+                : null,
+          ),
+        ),
+        const SizedBox(height: 8),
+        Expanded(
+          child: _NavButton(
+            icon: Icons.chevron_right,
+            onPressed: _currentIndex < words.length - 1
+                ? () => _pageController.nextPage(
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.easeInOut,
+                    )
+                : null,
+          ),
+        ),
+      ],
     );
   }
 
@@ -354,11 +416,13 @@ class _NavButton extends StatelessWidget {
       child: InkWell(
         onTap: onPressed,
         borderRadius: BorderRadius.circular(12),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 12),
-          child: Icon(
-            icon,
-            color: onPressed != null ? const Color(0xFF1A1A2E) : const Color(0xFFCCCCCC),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 12),
+            child: Icon(
+              icon,
+              color: onPressed != null ? const Color(0xFF1A1A2E) : const Color(0xFFCCCCCC),
+            ),
           ),
         ),
       ),
