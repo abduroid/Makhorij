@@ -9,6 +9,7 @@ import '../../models/word.dart';
 import '../../services/player_manager.dart';
 import '../../services/record_manager.dart';
 import '../widgets/word_card.dart';
+import 'autoplay_words.dart';
 
 class WordPagerScreen extends StatefulWidget {
   final Lesson lesson;
@@ -160,7 +161,27 @@ class _WordPagerScreenState extends State<WordPagerScreen> {
       onKeyEvent: _handleKeyEvent,
       child: Scaffold(
         backgroundColor: const Color(0xFFF2F2F2),
-        body: isLandscape ? _buildLandscapeLayout() : _buildPortraitLayout(context),
+        body: Stack(
+          children: [
+            isLandscape ? _buildLandscapeLayout() : _buildPortraitLayout(context),
+            Positioned(
+              top: MediaQuery.of(context).padding.top + 8,
+              right: 12,
+              child: IconButton(
+                icon: const Icon(Icons.play_circle_outline),
+                tooltip: 'Autoplay',
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => AutoPlayWordsScreen(
+                      lesson: widget.lesson,
+                      initialPage: _currentIndex,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
