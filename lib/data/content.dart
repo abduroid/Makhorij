@@ -745,4 +745,39 @@ final lessons = [
     ],
   ),
 
+  // Zod
+  Lesson(
+    letter: 'ض',
+    audioAssetPath: 'assets/audios/Zod.m4a',
+    words: [
+      Word(startMilliSeconds: 01004, endMilliSeconds: 02063, arabicText: 'ضَ'),
+      Word(startMilliSeconds: 03405, endMilliSeconds: 04441, arabicText: 'ضِ'),
+      Word(startMilliSeconds: 05732, endMilliSeconds: 06867, arabicText: 'ضُ'),
+      Word(startMilliSeconds: 08601, endMilliSeconds: 09793, arabicText: 'اَضْ'),
+      Word(startMilliSeconds: 12150, endMilliSeconds: 13842, arabicText: 'ضَيْفُ'),
+      Word(startMilliSeconds: 15990, endMilliSeconds: 17801, arabicText: 'عَضْلُ'),
+      Word(startMilliSeconds: 20117, endMilliSeconds: 21924, arabicText: 'ضَهْبُ'),
+      Word(startMilliSeconds: 23780, endMilliSeconds: 25305, arabicText: 'ضَبْطُ'),
+      Word(startMilliSeconds: 27178, endMilliSeconds: 29028, arabicText: 'ضَعْفُ'),
+      Word(startMilliSeconds: 31132, endMilliSeconds: 32701, arabicText: 'عَرْضُ'),
+      Word(startMilliSeconds: 35137, endMilliSeconds: 37001, arabicText: 'مَضْرِبْ'),
+      Word(startMilliSeconds: 38704, endMilliSeconds: 40542, arabicText: 'مِضْرَبْ'),
+      Word(startMilliSeconds: 42817, endMilliSeconds: 44567, arabicText: 'اِضْرِبْ'),
+      Word(startMilliSeconds: 46660, endMilliSeconds: 48492, arabicText: 'تَضْرِبُ'),
+      Word(startMilliSeconds: 50175, endMilliSeconds: 52309, arabicText: 'اَضْرِبُ'),
+      Word(startMilliSeconds: 54336, endMilliSeconds: 56578, arabicText: 'نَضْرِبُ'),
+      Word(startMilliSeconds: 58626, endMilliSeconds: 60626, arabicText: 'اِضْطَرَبَ'),
+      Word(startMilliSeconds: 63140, endMilliSeconds: 65432, arabicText: 'يَضْطَرِبُ'),
+      Word(startMilliSeconds: 67944, endMilliSeconds: 70371, arabicText: 'اِستَضْعَفَ'),
+      Word(startMilliSeconds: 73462, endMilliSeconds: 76167, arabicText: 'يَستَضْعِفُ'),
+      Word(startMilliSeconds: 79251, endMilliSeconds: 81230, arabicText: 'دَرْسُ'),
+      Word(startMilliSeconds: 83268, endMilliSeconds: 85011, arabicText: 'ضَرْسُ'),
+      Word(startMilliSeconds: 87491, endMilliSeconds: 89262, arabicText: 'وَدْعُ'),
+      Word(startMilliSeconds: 91762, endMilliSeconds: 93895, arabicText: 'وَضْعُ'),
+      Word(startMilliSeconds: 96090, endMilliSeconds: 97944, arabicText: 'بَعْدُ'),
+      Word(startMilliSeconds: 99766, endMilliSeconds: 101719, arabicText: 'بَعْضُ'),
+    ],
+  ),
+
+
 ];
