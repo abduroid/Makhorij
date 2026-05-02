@@ -779,5 +779,36 @@ final lessons = [
     ],
   ),
 
+  Lesson(
+    letter: 'Hamza',
+    audioAssetPath: 'assets/audios/48_Hamza_misollar.m4a',
+    words: [
+      Word(startMilliSeconds: 00649, endMilliSeconds: 02780, arabicText: 'شِىٓءَ'),
+      Word(startMilliSeconds: 04700, endMilliSeconds: 06860, arabicText: 'جِىٓءَ'),
+      Word(startMilliSeconds: 09326, endMilliSeconds: 11430, arabicText: 'يَجِىٓءُ'),
+      Word(startMilliSeconds: 13730, endMilliSeconds: 16040, arabicText: 'يُسِيٓءُ'),
+      Word(startMilliSeconds: 18109, endMilliSeconds: 20595, arabicText: 'مُسِىٓءُ'),
+      Word(startMilliSeconds: 22560, endMilliSeconds: 24140, arabicText: 'شَىْءُ'),
+      Word(startMilliSeconds: 25613, endMilliSeconds: 27240, arabicText: 'فَىْءُ'),
+      Word(startMilliSeconds: 28330, endMilliSeconds: 30000, arabicText: 'مِلْءُ'),
+      Word(startMilliSeconds: 31350, endMilliSeconds: 33060, arabicText: 'بُرْءُ'),
+      Word(startMilliSeconds: 33849, endMilliSeconds: 35568, arabicText: 'جُزْءُ'),
+      Word(startMilliSeconds: 36670, endMilliSeconds: 39420, arabicText: 'قِرٰاءَةٌ'),
+      Word(startMilliSeconds: 40610, endMilliSeconds: 43140, arabicText: 'سُوٓءُ'),
+      Word(startMilliSeconds: 45313, endMilliSeconds: 47860, arabicText: 'يَسُوٓءُ'),
+      Word(startMilliSeconds: 50430, endMilliSeconds: 52960, arabicText: 'وَضُوٓءُ'),
+      Word(startMilliSeconds: 55030, endMilliSeconds: 57880, arabicText: 'قُرُوٓءُ'),
+      Word(startMilliSeconds: 59556, endMilliSeconds: 62160, arabicText: 'مُرُوٓءَةٌ'),
+      Word(startMilliSeconds: 65010, endMilliSeconds: 67060, arabicText: 'اَلْمَرْءُ'),
+      Word(startMilliSeconds: 69038, endMilliSeconds: 70720, arabicText: 'اِمْرَأً'),
+      Word(startMilliSeconds: 73028, endMilliSeconds: 74800, arabicText: 'اِمْرِئٍ'),
+      Word(startMilliSeconds: 77222, endMilliSeconds: 79080, arabicText: 'اِمْرُؤٌ'),
+      Word(startMilliSeconds: 81120, endMilliSeconds: 83300, arabicText: 'اَلْجُزْءُ'),
+      Word(startMilliSeconds: 85788, endMilliSeconds: 88360, arabicText: 'جُزْأَهٰا'),
+      Word(startMilliSeconds: 91119, endMilliSeconds: 93360, arabicText: 'جُزْئِهٰا'),
+      Word(startMilliSeconds: 95559, endMilliSeconds: 98109, arabicText: 'جُزْؤُهٰا'),
+    ],
+  ),
+
 
 ];
